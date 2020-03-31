@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <link rel="stylesheet" href="{% static 'css/hardware.css' %}"/>
+    <script src="{% static 'js/hardware.js' %}"></script>
+    <title>Computer Hardware</title>
+  </head>
+  <body id="hardware">
+    <div class="text">
+      <h1 style="text-align:center;"><b>Computer Hardware</b></h1>
+      <p>I have been interested in computer and technology as long as I can remember. I picked two of my favorite projects I completed for fun.</p>
+      <h4>Mining Rig:</h4>
+      <img src="{% static 'img/rig1.png' %}" style="width:100%" class="hover-shadow cursor">
+      <p style="padding-top:15px;">This was my favorite project to complete. I learned a LOT while completing this project. I learned about: hardware, software, back-end, security, and cryptocurrency for starters.</p>
+      <p>Shortly explained, I decided to mine ETH (Ethereum) for several reasons. That decision determined what graphics card would work best, power needed, operational cost, and ROI. Next, this allowed me find the optimal: motherboard, power supply, CPU, and RAM. Finally, I needed to construct all the parts and set up everything online; allowing me to mine with millions of others.</p>
+      <p>Here are the parts I used:</p>
+      <ul style="padding-bottom:30px;">
+        <li>MB : Biostar TB250-BTC</li>
+        <li>GPU: EVGA GeForce GTX 1060 6GB SSC</li>
+        <li>CPU: Intel 7th Gen Celeron</li>
+        <li>PSU: Corsair HX1000i</li>
+        <li>RAM: HyperX Fury Black 4GB</li>
+        <li>Explomos Mining Powered Riser</li>
+        <li>TP-Link Smart Plug (HS110)</li>
+      </ul>
+      <h4 style="padding-bottom:15px;">Gaming PC:</h4>
+      <div class="row">
+        <div class="column">
+          <img src="{% static 'img/mb.png' %}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+          <img src="{% static 'img/cpu.png' %}" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+          <img src="{% static 'img/ssd.png' %}" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+        </div>
+        <div class="column">
+          <img src="{% static 'img/ram.png' %}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>
+      </div>
+      <p style="padding-top:15px;">This is the third computer I've built for myself. My method is simple, "build it to last and take care of it". I take this approach to most things (and life). I have a total of four hard drives and one m2 SSD. I really like the m2 drive and I learned a lot when researching why it's so much faster compared to a conventional HDD or SSD.</p>
+      <p>Here are the parts I used:</p>
+      <p style="font-size:10px;line-height:0%;">*Enjoy the slid-show</p>
+      <ul style="padding-bottom:50px;">
+        <li>MSI Z270 Gaming Pro Carbon</li>
+        <li>Kabby Lake i7-7700K 4.20GHz</li>
+        <li>GeForce RTX 2060 Super</li>
+        <li>M.2 NVMe SSD Samsung 960 Pro 512GB</li>
+        <li>Hyper Fury 32GB Dual-Channel 2400MHz</li>
+      </ul>
+  </div>
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal(1)">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+          <img src="{% static 'img/mb.png' %}" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+          <img src="{% static 'img/cpu.png' %}" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+          <img src="{% static 'img/ssd.png' %}" style="width:100%">
+        </div>
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+          <img src="{% static 'img/ram.png' %}" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="caption-container">
+          <p id="caption">Gaming PC</p>
+        </div>
+      </div>
+    </div>
+</body>
+  <footer class="foot">
+    {% include 'APP_HTML/footer.html' %}
+  </footer>
+</html>

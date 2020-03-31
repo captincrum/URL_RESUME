@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <title>Homepage</title>
+  </head>
+  <body id="hp">
+    <img class="bg-img" src="{% static 'img/wavy.png' %}"/>
+    <header class="applicant-info">
+      <img class="tborder" src="{% static 'img/tborder.png' %}"/>
+      <h1 class="app-name" align="left"><b>SHAWN</b> MCCRUM</h1>
+      <h4 class="app-title" align="left">PROGRAMMER</h4>
+      <img class="bborder" src="{% static 'img/bborder.png' %}"/>
+    </header>
+    <main role="main" class="inner cover">
+      <div class="contact-info">
+        <div class="icon-div">
+          <h5><img class="icon" src="{% static 'img/icon-home.png' %}" vspace="25" hspace="20" align="left"><br>Zephyr St,<br>Arvada, CO, 80004</h5><br>
+          <h5><img class="icon" src="{% static 'img/icon-email.png' %}" vspace="25" hspace="20">xmccrum@gmail.com<br></h5>
+          <h5><img class="icon" src="{% static 'img/icon-phone.png' %}" vspace="25" hspace="20">(201)-956-5546<br></h5>
+          <h5><img class="icon" src="{% static 'img/icon-urls.png' %}" vspace="25" hspace="20" align="left"><a href="https://bit.ly/39cb7OI"><br>LinkedIn</a><br><a href="https://bit.ly/2G6NF8x">Github</a></h5>
+          <div class="contact-btn" align="center">
+            <p><a href="mailto:xmccrum@gmail.com?Subject=Job%20Opportunity" class="btn btn-lg btn-secondary">Quick Email</a></p>
+          </div>
+        </div>
+        <footer class="foot">
+          {% include 'APP_HTML/footer.html' %}
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

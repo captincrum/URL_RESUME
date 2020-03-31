@@ -1,0 +1,43 @@
+{% load static %}
+    <style>
+      .top-nav ul {
+        list-style-type: none;
+        overflow: hidden;
+        background-color: #333333;
+      }
+
+      .top-nav li {
+        min-width: 10%;
+        max-width: 20%;
+        float: left;
+      }
+
+      .top-nav li a {
+        display: block;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 6px;
+        text-decoration: none;
+      }
+
+      .top-nav li a:hover {
+        background-color: #111111;
+      }
+
+      .top-nav {
+        position: absolute;
+        width: 100%;
+        max-height: 5%;
+        top: -.25%;
+        left: -.15%;
+      }
+
+    </style>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="{% url 'index' %}"><b>Home</b></a></li>
+        <li><a href="{% url 'resume' %}"><b>Resume</b></a></li>
+        <li><a href="{% url 'hobbies' %}"><b>Hobbies</b></a></li>
+      </ul>
+    </nav>

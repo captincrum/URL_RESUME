@@ -1,0 +1,103 @@
+{% load static %}
+/*General Page Layout*/
+html, body, #hobbies, #hardware, #chess, #finance, #snake, #pdf {
+  width: 100%;
+  height: 100%;
+  background-color: #272822;
+  padding-top: 20px;
+  text-align: left;
+}
+.hobbies, .finance, .snake {
+  width: 45%;
+  background-color: white;
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+/*Homepage Section*/
+#hp {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.bg-img {
+  height: 100%;
+  width: 100%;
+}
+.icon {
+  width: 48px;
+  height: 48px;
+}
+.tborder, .bborder {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+}
+.applicant-info {
+  position: absolute;
+  background-image: linear-gradient(to right, #0e0e0e, #1f1d1e, #242021);
+  width: 43%;
+  top: 9%;
+  left: 0%;
+  color: white;
+}
+.app-name {
+  text-indent: 15%;
+  padding-top: 5px;
+}
+.app-title {
+  text-indent: 20%;
+  color: #0894c5;
+}
+.contact-info {
+  display: block;
+  line-height: 0%;
+  position: absolute;
+  width: 92%;
+  height: 50%;
+  top: 24%;
+  left: 6%;
+  color: white;
+}
+.contact-btn {
+  position: center;
+  padding-top: 50px;
+  padding-left: 150px;
+}
+.icon-div {
+  line-height: 1.3;
+  display: table-cell;
+  vertical-align: middle;
+  max-width: 5%;
+  max-height: 5%;
+}
+/*Hobbies Section*/
+.hobbies h4 {
+  padding-left: 65px;
+  padding-bottom: 24px;
+}
+.hobby-img {
+  width: 250px;
+  height: 150px;
+}
+/*Chess Section*/
+.chessGame {
+  width: 45%;
+  display: block;
+  margin: auto;
+}
+/*Snake Section*/
+canvas {
+  border: 32px solid #152b6b;
+  background-color: #000;
+  margin-top: 10%;
+  margin-left: 35%;
+}
+/*Other*/
+.text {
+  width: 45%;
+  padding: 35px;
+  text-align: left;
+  background-color: white;
+  margin: auto;
+}

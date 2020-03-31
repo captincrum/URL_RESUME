@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <title>Shawn's Resume</title>
+  </head>
+  <body>
+    <iframe id="pdf" src="{% static 'img/tech-resume.pdf' %}"></iframe>
+  </body>
+  <footer class="foot">
+    {% include 'APP_HTML/footer.html' %}
+  </footer>
+</html>

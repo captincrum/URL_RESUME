@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <title>Chess Games</title>
+  </head>
+  <body id="chess">
+    <div class="text">
+      <h1><b>Chess</b></h1>
+      <p>Like many people, I learned chess as a child. I have always enjoyed the game but had no one to play against. One day a friend of mine mentioned and app he uses to play and I started playing later that day. Here are a few of my recent wins:</p>
+      <p>*Check out the second match you will see I made a brilliant move to win the game. I have only made two "brilliant" moves out of all my analyzed matches and only planned this one.</p>
+    </div>
+    <iframe class="chessGame" id="6543720" frameborder="0" src="//www.chess.com/emboard?id=6543720"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543720"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+    <iframe class="chessGame" id="6543722" frameborder="0" src="//www.chess.com/emboard?id=6543722"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543722"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+    <iframe class="chessGame" id="6543724" frameborder="0" src="//www.chess.com/emboard?id=6543724"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543724"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+    <iframe class="chessGame" id="6543726" frameborder="0" src="//www.chess.com/emboard?id=6543726"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543726"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+  </body>
+  <footer class="foot">
+    {% include 'APP_HTML/footer.html' %}
+  </footer>
+</html> 

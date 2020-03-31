@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <title>Hobbies</title>
+  </head>
+  <body id="hobbies">
+    <div class="hobbies">
+      <h1 style="text-align:center;padding:30px;"><b>Hobbies</b></h1>
+      <h4><a href="{% url 'hardware' %}"><img class="hobby-img" src="{% static 'img/thumb-hardware.png' %}">Computer Hardware</a></h4>
+      <h4><a href="{% url 'chess' %}"><img class="hobby-img" src="{% static 'img/thumb-chess.png' %}">Chess</a></h4>
+      <h4><a href="{% url 'finance' %}"><img class="hobby-img" src="{% static 'img/thumb-stock.png' %}">Finance and Investing</a></h4>
+      <h4><a href="{% url 'snake' %}"><img class="hobby-img" src="{% static 'img/thumb-snake.png' %}">Games</a></h4>
+    </div>
+  </body>
+  <footer class="foot">
+    {% include 'APP_HTML/footer.html' %}
+  </footer>
+</html>
