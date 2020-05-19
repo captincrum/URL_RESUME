@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html id="container-html" lang="en">
+{% load static %}
+  <style>
+  .column {
+  float: left;
+  width: 25%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row {
+    padding-bottom: 5%;
+
+  }
+  .column img {
+    width: 8vw;
+    height: 8vw;
+  }
+  .column h5 {
+    font-size: 2.2vh;
+    height: 2vh;
+    padding-bottom: 5vh;
+    text-align: center;
+  }
+</style>
+  <head>
+    <script>
+    function bookInfo(p1, p2) {
+      this.id 		= p1;
+      this.title 	= p2;
+      renderImg	= '<img src="https://m.media-amazon.com/images/I/' + this.id + '._SL500_.jpg"/>'
+      hTitle	= '<h5>' + this.title + '</h5>';
+      document.write(renderImg + hTitle);
+    }
+  </script>
+    {% include 'APP_HTML/head.html' %}
+    <title>Books</title>
+  </head>
+  <body id="container-body">
+    <div id="navbar-top">
+      {% include 'APP_HTML/navbar.html' %}
+    </div>
+    <div id="container-top">
+
+    </div>
+    <div id="container-left">
+
+    </div>
+    <div id="container-main">
+      <div class="container-text">
+        <h1><b>Books & Audiobooks</b></h1>
+        <p>As a child I was not allowed to watch a lot of television, but books and audiobooks where encouraged. Reading is something I enjoy this day. Looking back I can contribute benefits to reading, such as: vocabulary, creativity, and experiencing new things just to name a few.</p>
+        <p>An audiobook provides the same benefits as books, although used differently. Arguably, audiobooks provide a greater benefit because: humans have been "listening" far longer then "reading", the speech speed can be adjusted, and listening can be done while doing other things.</p>
+        <p>The five genres I enjoy most are: fantasy, adventure, leadership, personal growth, social psychology (and business are tied for fifth).</p>
+        <p>Here is a look into my Audible library:</p>
+        <div class="row">
+          <div class="column">
+            <script>
+              bookInfo('611Eot7+zJL', 'The Count of Monte Cristo');
+              bookInfo('513Y5o-DYtL', 'Atomic Habits');
+              bookInfo('51P0REwtUVL', '3001');
+              bookInfo('51+Hqnuf-YL', 'The Hobbit');
+            </script>
+          </div>
+          <div class="column">
+            <script>
+              bookInfo('51EDhEokzbL', 'Extreme Ownership');
+              bookInfo('517pfctTa9L', 'The Alchemist');
+              bookInfo('51oh9QYcEaL', 'Redwall');
+              bookInfo('614EpzUuUqL', 'The Fellowship of the Ring');
+            </script>
+          </div>
+          <div class="column">
+            <script>
+              bookInfo('41bK7Jt8k+L', '12 Rules for Life');
+              bookInfo('51uXBVRMP1L', 'Edgar Allan Poe');
+              bookInfo('51nXtvNzwRL', 'Mossflower');
+              bookInfo('61e89jSQgdL', 'The Two Towers');
+            </script>
+          </div>
+          <div class="column">
+            <script>
+              bookInfo('516nwT9bECL', 'Waking Up');
+              bookInfo('611T2YWNsiL', 'MONEY Master the Game');
+              bookInfo('5127OtHzHuL', 'Frankenstein');
+              bookInfo('51CnOU9YOWL', 'Treasure Island');
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container-right">
+
+    </div>
+    <div id="footer">
+      {% include 'APP_HTML/footer.html' %}
+    </div>
+  </body>
+</html>

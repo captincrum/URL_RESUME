@@ -1,0 +1,36 @@
+{% load static %}
+<style>
+  header {
+    position: absolute;
+    width: 45vw;
+    height: 12vh;
+    margin-top: 4vh;
+    border-top: .75vh solid;
+    border-bottom: .75vh solid;
+    border-image-source: linear-gradient(45deg, rgb(0,0,255), rgb(0,0,255, 0));
+    border-image-slice: 1;
+    color: white;
+  }
+  .app-name {
+    text-indent: 6vw;
+    font-size: 5vh;
+    line-height: 5vh;
+  }
+  .job-title {
+    text-indent: 9vw;
+    font-size: 3vh;
+    line-height: 2vh;
+    color: #0894c5;
+  }
+  @media only screen and (max-width: 414px) {
+    header {
+      width: 45vw;
+      height: 16vh;
+      margin-top: 2vh;
+    }
+  }
+</style>
+<header style="background-image: linear-gradient(to right, #000000, #0e0e0e, #0e0e0e, #1f1d1e, #242021);">
+  <h1 class="app-name" align="left"><b>SHAWN</b> MCCRUM</h1>
+  <h4 class="job-title" align="left">PROGRAMMER</h4>
+</header>

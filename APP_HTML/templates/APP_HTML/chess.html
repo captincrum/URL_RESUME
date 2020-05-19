@@ -1,23 +1,52 @@
 <!DOCTYPE html>
+<html id="container-html" lang="en">
 {% load static %}
-
-<html>
+  <style>
+  .chessGame {
+    width: 70%;
+    height: 100%;
+    display: block;
+    margin: auto;
+  }
+</style>
   <head>
+    <script>
+      function chess(id) {
+        this.id 	= id;
+        renderImg	= '<iframe class="chessGame" id="' + this.id + '" frameborder="0" src="//www.chess.com/emboard?id=' + this.id + '"></iframe>';
+        document.write(renderImg);
+      }
+    </script>
     {% include 'APP_HTML/head.html' %}
-    <title>Chess Games</title>
+    <title>Homepage</title>
   </head>
-  <body id="chess">
-    <div class="text">
-      <h1><b>Chess</b></h1>
-      <p>Like many people, I learned chess as a child. I have always enjoyed the game but had no one to play against. One day a friend of mine mentioned and app he uses to play and I started playing later that day. Here are a few of my recent wins:</p>
-      <p>*Check out the second match you will see I made a brilliant move to win the game. I have only made two "brilliant" moves out of all my analyzed matches and only planned this one.</p>
+  <body id="container-body">
+    <div id="navbar-top">
+      {% include 'APP_HTML/navbar.html' %}
     </div>
-    <iframe class="chessGame" id="6543720" frameborder="0" src="//www.chess.com/emboard?id=6543720"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543720"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
-    <iframe class="chessGame" id="6543722" frameborder="0" src="//www.chess.com/emboard?id=6543722"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543722"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
-    <iframe class="chessGame" id="6543724" frameborder="0" src="//www.chess.com/emboard?id=6543724"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543724"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
-    <iframe class="chessGame" id="6543726" frameborder="0" src="//www.chess.com/emboard?id=6543726"></iframe><script>window.addEventListener("message",e=>{e.data&&"6543726"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+    <div id="container-top">
+
+    </div>
+    <div id="container-left">
+
+    </div>
+    <div id="container-main">
+      <div class="container-text" style="padding-bottom:7vh;">
+        <h1><b>Chess</b></h1>
+        <p>Like many people, I learned chess as a child. I have always enjoyed the game but had no one to play against. One day a friend of mine mentioned and app he uses to play and I started playing later that day. Here are a few of my recent wins:</p>
+        <p>I have been extremely satisfied with Chess.com. They offer: lessons, puzzles, and lots and lots of data. The data is what really excites me. Users have the ability to analise any match, track their overall progress, and even find out which pieces are being used correctly or not.</p>
+        <p>*Check out the second match and see if you can spot the brilliant that was made. I have only made two "brilliant" moves out of all my analyzed matches and only planned this one.</p>
+        <script>chess(6543720);</script><script>window.addEventListener("message",e=>{e.data&&"6543720"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+        <script>chess(6543722);</script><script>window.addEventListener("message",e=>{e.data&&"6543722"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+        <script>chess(6543724);</script><script>window.addEventListener("message",e=>{e.data&&"6543724"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+        <script>chess(6543726);</script><script>window.addEventListener("message",e=>{e.data&&"6543726"===e.data.id&&document.getElementById(`${e.data.id}`)&&(document.getElementById(`${e.data.id}`).style.height=`${e.data.frameHeight+30}px`)});</script>
+      </div>
+    </div>
+    <div id="container-right">
+
+    </div>
+    <div id="footer">
+      {% include 'APP_HTML/footer.html' %}
+    </div>
   </body>
-  <footer class="foot">
-    {% include 'APP_HTML/footer.html' %}
-  </footer>
-</html> 
+</html>

@@ -1,14 +1,14 @@
 // Variables
 var
-COLS = 30,      // Columns
-ROWS = 30,      // Rows
-EMPTY = 0,      // Empty Cell
-SNAKE = 1,      // Snake
-FOOD  = 2,      // Food
-LEFT  = 0,      // Left key
-UP    = 1,      // Up key
-RIGHT = 2,      // Right key
-DOWN  = 3,      // Down key
+COLS      = 30, // Columns
+ROWS      = 30, // Rows
+EMPTY     = 0,  // Empty Cell
+SNAKE     = 1,  // Snake
+FOOD      = 2,  // Food
+LEFT      = 0,  // Left key
+UP        = 1,  // Up key
+RIGHT     = 2,  // Right key
+DOWN      = 3,  // Down key
 KEY_LEFT  = 37, // Key codes
 KEY_UP    = 38, // Key codes
 KEY_RIGHT = 39, // Key codes
@@ -22,15 +22,15 @@ score;	        // Player score
 
 // Create game area
 grid = {
-	width: null,         // Columns
-	height: null,        // Rows
-	_grid: null,         // Array
+	width: null,  // Columns
+	height: null, // Rows
+	_grid: null,  // Array
 
 	// Initiation with direction(d), columns(c) and rows(r)
 	init: function(d, c, r) {
 		this.width = c;  // Columns width
 		this.height = r; // Row height
-        this._grid = []; // Empty array for grid
+        this._grid = []; // Empty array containing the grid
 
         // Create x grid
 		for (var x=0; x < c; x++) {
@@ -39,7 +39,6 @@ grid = {
             // Create y grid
             for (var y=0; y < r; y++) {
                 this._grid[x].push(d);
-
             }
 		}
 	},
@@ -114,6 +113,7 @@ function main() {
 
     // Key down action
 	document.addEventListener("keydown", function(e) {
+	    e.preventDefault();
 		keyCode[e.keyCode] = true;
 
 	});
@@ -202,8 +202,8 @@ function update() {
 
 // Render grid to canvas
 function draw() {
-	var tw = canvas.width/grid.width;    // Calculate width
-	var th = canvas.height/grid.height;  // Calculate height
+	var tw = canvas.width/grid.width;    // Calculate width set from style.css
+	var th = canvas.height/grid.height;  // Calculate height set from style.css
 
     // Loop through entire grid to draw cells
 	for (var x=0; x < grid.width; x++) {

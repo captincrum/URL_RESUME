@@ -1,32 +1,186 @@
 <!DOCTYPE html>
+<html id="container-html" lang="en">
 {% load static %}
-<html>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  .row > .column {
+    padding: 0 8px;
+
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 25%;
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    margin: auto;
+    width: 100%;
+  }
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .mySlides {
+    display: none;
+  }
+  .cursor {
+    cursor: pointer;
+  }
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 5vh;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 3vh;
+    padding: 3vh 5vh;
+    position: absolute;
+    top: 0;
+  }
+  img {
+    margin-bottom: -4px;
+  }
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+  .demo {
+    opacity: 0.6;
+  }
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
   <head>
+    <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+  </script>
     {% include 'APP_HTML/head.html' %}
-    <link rel="stylesheet" href="{% static 'css/hardware.css' %}"/>
-    <script src="{% static 'js/hardware.js' %}"></script>
-    <title>Computer Hardware</title>
+    <title>Hardware</title>
   </head>
-  <body id="hardware">
-    <div class="text">
-      <h1 style="text-align:center;"><b>Computer Hardware</b></h1>
-      <p>I have been interested in computer and technology as long as I can remember. I picked two of my favorite projects I completed for fun.</p>
-      <h4>Mining Rig:</h4>
-      <img src="{% static 'img/rig1.png' %}" style="width:100%" class="hover-shadow cursor">
-      <p style="padding-top:15px;">This was my favorite project to complete. I learned a LOT while completing this project. I learned about: hardware, software, back-end, security, and cryptocurrency for starters.</p>
-      <p>Shortly explained, I decided to mine ETH (Ethereum) for several reasons. That decision determined what graphics card would work best, power needed, operational cost, and ROI. Next, this allowed me find the optimal: motherboard, power supply, CPU, and RAM. Finally, I needed to construct all the parts and set up everything online; allowing me to mine with millions of others.</p>
-      <p>Here are the parts I used:</p>
-      <ul style="padding-bottom:30px;">
-        <li>MB : Biostar TB250-BTC</li>
-        <li>GPU: EVGA GeForce GTX 1060 6GB SSC</li>
-        <li>CPU: Intel 7th Gen Celeron</li>
-        <li>PSU: Corsair HX1000i</li>
-        <li>RAM: HyperX Fury Black 4GB</li>
-        <li>Explomos Mining Powered Riser</li>
-        <li>TP-Link Smart Plug (HS110)</li>
-      </ul>
-      <h4 style="padding-bottom:15px;">Gaming PC:</h4>
-      <div class="row">
+  <body id="container-body">
+    <div id="navbar-top">
+      {% include 'APP_HTML/navbar.html' %}
+    </div>
+    <div id="container-top">
+
+    </div>
+    <div id="container-left">
+
+    </div>
+    <div id="container-main">
+      <div class="container-text">
+        <h1><b>Computer Hardware</b></h1>
+        <h4><b>Mining Rig:</b></h4>
+        <p>This was my favorite project to complete. I learned a LOT while completing this project. I learned about: hardware, software, back-end, security, and cryptocurrency for starters.</p>
+        <p>Shortly explained, I decided to mine ETH (Ethereum) for several reasons. That decision determined: which graphics card would work best, power needed, operational cost, and ROI. Next, this allowed me find the optimal: motherboard, power supply, CPU, and RAM. Finally, I needed to construct all the parts and set up everything online; allowing me to mine with millions of others.</p>
+        <img src="{% static 'img/rig1.png' %}" style="width:100%" class="hover-shadow cursor">
+        <p style="padding-top:30px;">List of the parts used:</p>
+        <ul style="padding-bottom:7vh;test-align:left;">
+          <li>MB : Biostar TB250-BTC</li>
+          <li>GPU: EVGA GeForce GTX 1060 6GB SSC (x6)</li>
+          <li>CPU: Intel 7th Gen Celeron</li>
+          <li>PSU: Corsair HX1000i</li>
+          <li>RAM: HyperX Fury Black 4GB</li>
+          <li>Explomos Mining Powered Riser (x6)</li>
+          <li>TP-Link Smart Plug (HS110)</li>
+        </ul>
+          <h4 style="padding-bottom:15px;"><b>Gaming PC:</b></h4>
+        <p>This is the third computer I've built for myself. My method is simple, "build it to last and take care of it". I take this approach to most things (and life). I have a total of four hard drives and one m2 SSD. I really like the m2 drive and I learned a lot when researching why it's so much faster compared to a conventional HDD or SSD.</p>
+        <div class="row">
         <div class="column">
           <img src="{% static 'img/mb.png' %}" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
         </div>
@@ -40,17 +194,17 @@
           <img src="{% static 'img/ram.png' %}" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
         </div>
       </div>
-      <p style="padding-top:15px;">This is the third computer I've built for myself. My method is simple, "build it to last and take care of it". I take this approach to most things (and life). I have a total of four hard drives and one m2 SSD. I really like the m2 drive and I learned a lot when researching why it's so much faster compared to a conventional HDD or SSD.</p>
-      <p>Here are the parts I used:</p>
-      <p style="font-size:10px;line-height:0%;">*Enjoy the slid-show</p>
-      <ul style="padding-bottom:50px;">
-        <li>MSI Z270 Gaming Pro Carbon</li>
-        <li>Kabby Lake i7-7700K 4.20GHz</li>
-        <li>GeForce RTX 2060 Super</li>
-        <li>M.2 NVMe SSD Samsung 960 Pro 512GB</li>
-        <li>Hyper Fury 32GB Dual-Channel 2400MHz</li>
-      </ul>
-  </div>
+      </div>
+      <div class="container-text">
+        <p>List of the parts used:</p>
+        <ul style="padding-bottom:15vh;">
+          <li>MSI Z270 Gaming Pro Carbon</li>
+          <li>Kabby Lake i7-7700K 4.20GHz</li>
+          <li>GeForce RTX 2060 Super</li>
+          <li>M.2 NVMe SSD Samsung 960 Pro 512GB</li>
+          <li>Hyper Fury 32GB Dual-Channel 2400MHz</li>
+        </ul>
+    </div>
     <div id="myModal" class="modal">
       <span class="close cursor" onclick="closeModal(1)">&times;</span>
       <div class="modal-content">
@@ -77,8 +231,12 @@
         </div>
       </div>
     </div>
-</body>
-  <footer class="foot">
-    {% include 'APP_HTML/footer.html' %}
-  </footer>
+    </div>
+    <div id="container-right">
+
+    </div>
+    <div id="footer">
+      {% include 'APP_HTML/footer.html' %}
+    </div>
+  </body>
 </html>

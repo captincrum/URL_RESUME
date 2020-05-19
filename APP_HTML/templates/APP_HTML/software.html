@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html id="container-html" lang="en">
+{% load static %}
+<style>
+  ul, ol {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    padding-top: 0px;
+  }
+  pre {
+    font-family: monospace,monospace;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  pre.prettyprint {
+    margin: 16px 0;       /* Div position on page */
+    background: #2b2b2a;  /* Code box background color*/
+    word-wrap: normal;
+    overflow-x: auto;
+    direction: ltr;
+    text-align: left;
+  }
+  pre.prettyprint ol.linenums {
+    font-size: 13px;
+    list-style-type: none;
+    counter-reset: prettyprintlinenumber;
+  }
+  pre.prettyprint .pln {
+    color: #c4c4c4; /* Plain text */
+  }
+  pre.prettyprint .tag {
+    color: green; /* Tag color */
+    font-weight: bold;
+  }
+  pre.prettyprint .atv {
+    color: #4070a0;
+  }
+  pre.prettyprint .atn {
+    color: orange; /* Class color */
+  }
+  pre.prettyprint .pun{
+    color: #c4c4c4; /* Equals color*/
+  }
+  /* Line numbers */
+  pre.prettyprint ol.linenums li::before {
+    content: counter(prettyprintlinenumber);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    padding-right: 5px;
+    text-align: right;
+    color: white;      /* Text color*/
+    background: #666;  /* Line number background */
+  }
+  pre.prettyprint ol.linenums li {
+    margin: 0;
+    padding-left: 48px;
+    counter-increment: prettyprintlinenumber;
+    position: relative;
+  }
+</style>
+  <head>
+    {% include 'APP_HTML/head.html' %}
+    <title>Software</title>
+  </head>
+  <body id="container-body">
+    <div id="navbar-top">
+      {% include 'APP_HTML/navbar.html' %}
+    </div>
+    <div id="container-top">
+
+    </div>
+    <div id="container-left">
+
+    </div>
+    <div id="container-main">
+      <div class="container-text">
+        <div class="text-topic">
+          <h1><b>Computer Programming</b></h1>
+          <h4><b>Websites:</b></h4>
+          <p>The most recent website I created is this one! I have also created and worked on at least 30 others. The reason I chose to create this project using Django was to teach myself something new while also being productive. I am very familiar with: Python, HTML, CSS, JS and knew this project would be an enjoyable way to display my skills.<br>One of the things I gave high priority to in this project was scalability. After all, scalability is one of Django's greatest benefits. Something I quickly learned was the ability to reduce redundant code while increasing efficiency.</p>
+          <p><b>For example:</b> the navigation bar is on every webpage. Instead of pasting the same code at the top of each html page I created one html page for the navigation bar alone. This not only makes the code easier to navigate, but whenever changes need to be made one page is edited opposed to editing all of them. The result of fully applying this logic can be seen below.</p>
+          <p>Below is an example using the resume page:</p>
+          <pre class="prettyprint linenums"><ol class="linenums"><li class="L0"><span class="pln">&lt;!DOCTYPE <span class="tag">html<span class="pln">&gt;</span></span></span></li><li class="L1"><span class="pln">&#123;% load static %}</span></li><li class="L2"><span class="tag">&lt;html&gt;</span></li><li class="L3"><span class="tag">  &lt;head&gt;</span></li><li class="L4"><span class="pln">    &#123;% include 'FILE/head.html' %}</span></li><li class="L5"><span class="tag">    &lt;title&gt;</span><span class="pln">Resume</span><span class="tag">&lt;/title&gt;</span></li><li class="L6"><span class="tag">  &lt;/head&gt;</span></li><li class="L7"><span class="tag">  &lt;body <span class="atn">class<span class="pln">="defaultPG"<span class="tag">&gt;</span></span></span></span></li><li class="L8"><span class="tag">    &lt;iframe <span class="atn">class<span class="pln">="noScrollPG" <span class="atn">style<span class="pln">="top:5%;" <span class="atn">src<span class="pln">="&#123;% static 'FILE/resume.pdf' %}"<span class="tag">&gt;&lt;/iframe&gt;</span></span></span></span></span></span></span></span></li><li class="L9"><span class="pln">    &#123;% include 'FILE/footer.html' %}</span></li><li class="L10"><span class="tag">  &lt;/body></span></li><li class="L11"><span class="tag">&lt;/html></span></li></ol></pre>
+        </div>
+        <div class="text-topic">
+        <h4><b>Data Testing, Gathering, & Analysis:</b></h4>
+        <p>My favorite project to date was designed to automate stock market trading. I never found a subject as in depth as technology.. Until I started to learn about finance.</p>
+        </div>
+      </div>
+    </div>
+    <div id="container-right">
+
+    </div>
+    <div id="footer">
+      {% include 'APP_HTML/footer.html' %}
+    </div>
+  </body>
+</html>

@@ -1,20 +1,37 @@
 {% load static %}
-  <style>
-  .foot p {
-    font-size: 10px;
-    line-height: 0%;
-    color: #0894c5;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 100%;
-    padding: 0 330px 15px 15px;
-    width: 100%;
+<style>
+footer {
+  position: fixed;
+  width: 100%;
+  height: 7vh;
+  bottom: 0%;
+  background-color: #333;
+}
+.foot-center p  {
+  padding-top: 1vh;
+  margin-top: .65vw;
+  margin-bottom: .65vw;
+  line-height: 0%;
+  font-size: .8vw;
+  text-align: center;
+  color: #0894c5;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 414px) {
+  .foot-center p  {
+    font-size: 3vw;
+    line-height: 1vw;
   }
+</style>
+<footer>
+  <div class="foot-left">
 
-  </style>
-  <p>WEBSITE CREATED BY SHAWN MCCRUM</p>
-  <p>POWERED BY DJANGO</p>
+  </div>
+  <div class="foot-center">
+    <p>Created by SHAWN MCCRUM</p>
+    <p>Powered by Django</p>
+  </div>
+  <div class="foot-right">
+
+  </div>
+</footer>

@@ -21,9 +21,7 @@ urlpatterns = [
     path('', include('APP_HTML.urls')),
     path('index/', include('APP_HTML.urls')),
     path('resume/', include('APP_HTML.urls')),
-    path('cover/', include('APP_HTML.urls')),
-    path('hobbies/', include('APP_HTML.urls')),
     path('chess/', include('APP_HTML.urls')),
     path('hardware/', include('APP_HTML.urls')),
-    path('finance/', include('APP_HTML.urls')),
+    path('books/', include('APP_HTML.urls')),
 ]

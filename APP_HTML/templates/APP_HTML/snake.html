@@ -1,14 +1,44 @@
 <!DOCTYPE html>
+<html id="container-html" lang="en">
 {% load static %}
-<html>
+<style>
+  canvas {
+    position: absolute;
+    top: 45vh;
+    left: 30vw;
+    width: 85vh;
+    height: 85vh;
+    border: 32px solid #152b6b;
+    background-color: #000;
+  }
+</style>
   <head>
     {% include 'APP_HTML/head.html' %}
-    <title>Snake Game</title>
+    <title>Homepage</title>
   </head>
-  <body id="snake" onload="startGame()">
-    <script src="{% static 'js/snake.js' %}"></script>
+  <body id="container-body">
+    <div id="navbar-top">
+      {% include 'APP_HTML/navbar.html' %}
+    </div>
+    <div id="container-top">
+
+    </div>
+    <div id="container-left">
+
+    </div>
+    <div id="container-main">
+      <div class="container-text" style="padding-bottom:105vh;" onload="startGame()">
+        <h1><b>Snake Game</b></h1>
+        <p>Just a simple snake game created with JavaScript. Logically, there are many ways to tackle a game like snake. In this situation, I thought it would be best to create the snakes environment using a grid of rows and columns. This gives the ability to quickly scale the map size by changing the number of rows and columns -- which, in turn allows the use of percentages within css. This also resolves any alignment issues.</p>
+        <p>The objective is simple; use the <b>keyboard arrow keys</b> to collect as much food as possible without hitting walls or yourself. The score can be seen in the bottom left (but it is not recorded).</p>
+        <script src="{% static 'js/snake.js' %}"></script>
+      </div>
+    </div>
+    <div id="container-right">
+
+    </div>
+    <div id="footer">
+      {% include 'APP_HTML/footer.html' %}
+    </div>
   </body>
-  <footer class="foot">
-    {% include 'APP_HTML/footer.html' %}
-  </footer>
 </html>
